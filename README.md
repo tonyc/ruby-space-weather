@@ -1,4 +1,4 @@
-= ruby-space-weather
+# ruby-space-weather
 
 The goal of this project is to parse the data file contained at:
 
@@ -29,7 +29,7 @@ This file contains 1-minute measurements of solar wind data from the ACE satelli
     2015 01 07  1412   57029   51120    1        8.1      420.7     2.17e+04
 
 
-= Notes/tasks
+# Notes/tasks
 
   * Come up with a general design of classes to parse & eventually store this data
   * Design a SQL table to store this data.
@@ -42,4 +42,4 @@ This file contains 1-minute measurements of solar wind data from the ACE satelli
       * Proton density
       * Bulk speed
       * Ion Temperature is not important, so skip it
-
+    * Bonus points for writing tests!
