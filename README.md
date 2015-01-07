@@ -1,13 +1,12 @@
-Rails-space-weather
+= ruby-space-weather
 
 The goal of this project is to parse the data file contained at:
 
   ftp://ftp.swpc.noaa.gov/pub/lists/ace/ace_swepam_1m.txt
 
-There is a copy of this file stored in the sample_data/ directory.
+There is a copy of this file saved as solar_data.txt
 
-This file contains 1-minute averaged Real-time Bulk Parameters of the Solar Wind Plasma,
-and looks like this:
+This file contains 1-minute measurements of solar wind data from the ACE satellite, and looks like this:
 
     :Data_list: ace_swepam_1m.txt
     :Created: 2015 Jan 07 1548 UT
@@ -29,13 +28,18 @@ and looks like this:
     2015 01 07  1411   57029   51060    1        8.6      422.2     2.23e+04
     2015 01 07  1412   57029   51120    1        8.1      420.7     2.17e+04
 
-Parse the text file, keeping track of the following data:
 
-  * Year/Month/Day (seconds etc not needed)
-  * Whether the record is "nominal" (see comments in file)
-  * Proton density
-  * Bulk wind speed
+= Notes/tasks
 
-* Ion Temperature is not important.
-* Commented lines begin with either a : or #, these lines should not be parsed.
+  * Come up with a general design of classes to parse & eventually store this data
+  * Design a SQL table to store this data.
+
+  * Write some ruby code to parse the text file:
+    * Commented lines begin with either : or #
+    * Keep track of the following data:
+      * Observation date/time (dd/mm/yyyy hh:mm - seconds & julian day can be skipped)
+      * Whether the record is "nominal", or has missing data (see comments in file)
+      * Proton density
+      * Bulk speed
+      * Ion Temperature is not important, so skip it
 
